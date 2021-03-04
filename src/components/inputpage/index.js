@@ -1,10 +1,18 @@
 import React, { useState } from "react";
+import s from "./inputpage.module.css";
 
 function InputPage({ setDiaryPages, setAddPage, setCurrentPage, diaryPages }) {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState({
+    title: "",
+    text: "",
+    gratitude: "",
+  });
 
   const handleChange = (e) => {
-    setInput(e.target.value);
+    setInput({
+      ...input,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleSubmit = (e) => {
@@ -15,9 +23,30 @@ function InputPage({ setDiaryPages, setAddPage, setCurrentPage, diaryPages }) {
   };
 
   return (
-    <div>
+    <div className={s.inputpage}>
       <form onSubmit={handleSubmit}>
-        <input onChange={handleChange} type="text" name="" id="" />
+        <input
+          onChange={handleChange}
+          type="text"
+          placeholder="Título"
+          name="title"
+          value={input.title}
+        />
+        <input
+          onChange={handleChange}
+          type="text"
+          placeholder="Empezá a contar tu día"
+          name="text"
+          value={input.text}
+        />
+        <input
+          onChange={handleChange}
+          type="text"
+          placeholder="Agradeciemiento"
+          name="gratitude"
+          value={input.gratitude}
+        />
+
         <button>Agregar</button>
       </form>
     </div>
