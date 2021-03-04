@@ -1,0 +1,24 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+}
+
+h1 {
+  font-weight: 900;
+}
+
+#metas {
+  color: #eecd57;
+}
+
+#como {
+  color: #2ec5bc;
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
+#inspiracion {
+  color: #e73a97;
+}

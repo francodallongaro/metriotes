@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import PageDetail from "./components/page";
+import Navbar from "./components/navbar";
+import Sidebar from "./components/sidebar";
+import { useState } from "react";
+import MainPage from "./components/mainPage";
 
 function App() {
+  const [diaryPages, setDiaryPages] = useState([
+    "pagina1",
+    "pagina2",
+    "pagina3",
+  ]);
+
+  const [currentPage, setCurrentPage] = useState(diaryPages[0]);
+  const [addPage, setAddPage] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+
+      <div className="layout">
+        <Sidebar
+          diaryPages={diaryPages}
+          setCurrentPage={setCurrentPage}
+          setAddPage={setAddPage}
+        />
+        <MainPage
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          add={addPage}
+          setDiaryPages={setDiaryPages}
+          setAddPage={setAddPage}
+          diaryPages={diaryPages}
+        />
+      </div>
+    </>
   );
 }
 
