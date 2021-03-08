@@ -12,14 +12,12 @@ function App() {
       <Route exact path="/">
         <h1>home</h1>
       </Route>
-      <Switch>
-        <Route path="/comoestas">
-          <ComoEstas />
-        </Route>
-        <Route path="/inspiracion">
-          <Inspiracion />
-        </Route>
-      </Switch>
+      <Route path="/comoestas">
+        <ComoEstas />
+      </Route>
+      <Route path="/inspiracion">
+        <Inspiracion />
+      </Route>
     </BrowserRouter>
   );
 }
