@@ -24,7 +24,7 @@ function InputPage({ setDiaryPages, setAddPage, setCurrentPage, diaryPages }) {
 
   return (
     <div className={s.inputpage}>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} autocomplete="off">
         <input
           onChange={handleChange}
           type="text"

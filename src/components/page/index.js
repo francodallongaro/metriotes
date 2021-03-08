@@ -2,7 +2,13 @@ import React from "react";
 import s from "./page.module.css";
 
 function PageDetail({ currentPage }) {
-  if (!currentPage) return <h1>Empeza a completar!</h1>;
+  if (!currentPage)
+    return (
+      <h3>
+        Este espacio es unicamente tuyo, sentite libre de escribir todo lo que
+        pensas.
+      </h3>
+    );
   return (
     <div className={s.detail}>
       <h1>{currentPage.title || "no hay nada"}</h1>
