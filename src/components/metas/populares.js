@@ -12,9 +12,8 @@ function Populares({ setMetasGuardadas }) {
   return (
     <>
       <h1>Populares</h1>
-      {metas.map((popular) => (
-        <Meta popular={popular} setMetasGuardadas={setMetasGuardadas} />
-      ))}
+
+      <Meta populares={populares} setMetasGuardadas={setMetasGuardadas} />
     </>
   );
 }
