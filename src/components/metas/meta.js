@@ -7,7 +7,7 @@ function Meta({ meta, setMetaGuardada, popular }) {
   }
   return (
     <div>
-      <h4 onClick={() => handleClick({ popular })}>{popular}</h4>
+      <h4 onClick={() => handleClick(popular)}>{popular}</h4>
     </div>
   );
 }
