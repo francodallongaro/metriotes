@@ -6,6 +6,7 @@ function Inspiracion() {
   const [quotes, setQuotes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [refetch, setRefetch] = useState(true);
+  const [misquotes, setMisQuotes] = useState([]);
 
   useEffect(() => {
     setLoading(true);
@@ -20,8 +21,12 @@ function Inspiracion() {
   if (loading) return <h1>Loading</h1>;
   return (
     <div className="layout">
-      <SidebarQuotes />
-      <Quotes quotes={quotes} setRefetch={setRefetch} />
+      <SidebarQuotes misquotes={misquotes} />
+      <Quotes
+        quotes={quotes}
+        setRefetch={setRefetch}
+        setMisQuotes={setMisQuotes}
+      />
     </div>
   );
 }

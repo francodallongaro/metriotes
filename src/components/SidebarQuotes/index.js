@@ -1,14 +1,14 @@
 import React from "react";
 
-function SidebarQuotes() {
+function SidebarQuotes({ misquotes }) {
   return (
     <aside>
-      <div>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. A, fugit!
-        </p>
-        <h3>Author</h3>
-      </div>
+      {misquotes.map((quote, i) => (
+        <div key={i}>
+          <p>{quote.text}</p>
+          <h3>{quote.author}</h3>
+        </div>
+      ))}
     </aside>
   );
 }
