@@ -16,7 +16,7 @@ function Inspiracion() {
       });
   }, []);
 
-  if (loading) <h1>Loading</h1>;
+  if (loading) return <h1>Loading</h1>;
   return (
     <div className="layout">
       <SidebarQuotes />

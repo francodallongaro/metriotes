@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import Meta from "./meta";
+
+import MetaPersonal from "./metaPersonal";
 
 function MisMetas({ metasGuardadas }) {
   return (
     <>
       <h1>Mis Metas</h1>
       {metasGuardadas.map((meta) => (
-        <Meta meta={meta} />
+        <MetaPersonal meta={meta} />
       ))}
     </>
   );
