@@ -1,19 +1,25 @@
 import React, { useState } from "react";
 import Meta from "./meta";
 
+const populares = [
+  "Despertarme Temprano",
+  "Dormirme Temprano",
+  "Dejar de fumar",
+];
 function Populares({ setMetasGuardadas }) {
-  const populares = [
-    "Despertarme Temprano",
-    "Dormirme Temprano",
-    "Dejar de fumar",
-  ];
-  const [metas, setMetas] = useState([populares]);
+  const [metas, setMetas] = useState(populares);
 
   return (
     <>
       <h1>Populares</h1>
-
-      <Meta populares={populares} setMetasGuardadas={setMetasGuardadas} />
+      {metas.map((popular, i) => (
+        <Meta
+          key={i}
+          popular={popular}
+          setMetasGuardadas={setMetasGuardadas}
+          setMetas={setMetas}
+        />
+      ))}
     </>
   );
 }
