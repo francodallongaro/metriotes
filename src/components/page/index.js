@@ -11,7 +11,7 @@ function PageDetail({ currentPage }) {
     );
   return (
     <div className={s.detail}>
-      <h1>{currentPage.title || "no hay nada"}</h1>
+      <h1>{currentPage.title}</h1>
       <h3>¿Qué pasó hoy?</h3>
       <p>{currentPage.text}</p>
       <h3>¿Qué agradezco?</h3>

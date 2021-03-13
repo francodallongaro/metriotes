@@ -9,6 +9,19 @@ function Inspiracion() {
   const [misquotes, setMisQuotes] = useState([]);
 
   useEffect(() => {
+    let localQuotes = localStorage.getItem("localQuotes");
+    if (localQuotes) {
+      setMisQuotes(JSON.parse(localQuotes));
+    } else {
+      localStorage.setItem("localQuotes", JSON.stringify([]));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("localQuotes", JSON.stringify(misquotes));
+  }, [misquotes]);
+
+  useEffect(() => {
     setLoading(true);
     fetch("https://goquotes-api.herokuapp.com/api/v1/random?count=10")
       .then((res) => res.json())

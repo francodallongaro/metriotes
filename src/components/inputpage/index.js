@@ -17,7 +17,10 @@ function InputPage({ setDiaryPages, setAddPage, setCurrentPage, diaryPages }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setDiaryPages((prev) => [input, ...prev]);
+    setDiaryPages((prev) => [
+      { ...input, id: Math.floor(Math.random() * 9999999) },
+      ...prev,
+    ]);
     setAddPage(false);
     setCurrentPage(input);
   };
@@ -32,7 +35,7 @@ function InputPage({ setDiaryPages, setAddPage, setCurrentPage, diaryPages }) {
           name="title"
           value={input.title}
         />
-        <input
+        <textarea
           onChange={handleChange}
           type="text"
           placeholder="Empezá a contar tu día"
