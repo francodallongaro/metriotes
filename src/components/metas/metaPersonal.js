@@ -1,9 +1,11 @@
 import React from "react";
 
 function MetaPersonal({ meta }) {
+  const onClick = () => {};
+
   return (
     <div>
-      <h4>{meta}</h4>
+      <h4 onClick={onClick}>{meta.title}</h4>
     </div>
   );
 }

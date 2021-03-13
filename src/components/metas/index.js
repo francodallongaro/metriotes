@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import MetaDetail from "./metaDetail";
 import MisMetas from "./misMetas";
 import Populares from "./populares";
 
 function Metas() {
   const [metasGuardadas, setMetasGuardadas] = useState([]);
+  const [currentMeta, setCurrentMeta] = useState(metasGuardadas[0]);
 
   useEffect(() => {
     let localMetas = localStorage.getItem("localMetas");
@@ -22,6 +24,7 @@ function Metas() {
     <>
       <MisMetas metasGuardadas={metasGuardadas} />
       <Populares setMetasGuardadas={setMetasGuardadas} />
+      <MetaDetail metasGuardadas={metasGuardadas} />
     </>
   );
 }
