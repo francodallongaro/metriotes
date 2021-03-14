@@ -1,7 +1,9 @@
 import React from "react";
 
-function MetaPersonal({ meta }) {
-  const onClick = () => {};
+function MetaPersonal({ meta, setCurrentMeta }) {
+  const onClick = () => {
+    setCurrentMeta(meta);
+  };
 
   return (
     <div>

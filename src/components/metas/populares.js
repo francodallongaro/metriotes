@@ -14,7 +14,7 @@ const populares = [
   },
 ];
 
-function Populares({ setMetasGuardadas }) {
+function Populares({ setMetasGuardadas, setCurrentMeta }) {
   const [metas, setMetas] = useState(populares);
 
   useEffect(() => {
@@ -39,6 +39,7 @@ function Populares({ setMetasGuardadas }) {
           popular={popular}
           setMetasGuardadas={setMetasGuardadas}
           setMetas={setMetas}
+          setCurrentMeta={setCurrentMeta}
         />
       ))}
     </>

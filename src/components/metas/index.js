@@ -22,9 +22,15 @@ function Metas() {
 
   return (
     <>
-      <MisMetas metasGuardadas={metasGuardadas} />
-      <Populares setMetasGuardadas={setMetasGuardadas} />
-      <MetaDetail metasGuardadas={metasGuardadas} />
+      <MisMetas
+        metasGuardadas={metasGuardadas}
+        setCurrentMeta={setCurrentMeta}
+      />
+      <Populares
+        setMetasGuardadas={setMetasGuardadas}
+        setCurrentMeta={setCurrentMeta}
+      />
+      <MetaDetail currentMeta={currentMeta} setCurrentMeta={setCurrentMeta} />
     </>
   );
 }
