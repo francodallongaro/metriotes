@@ -16,10 +16,7 @@ function Page({
 
   const onClickGuardar = () => {
     setDiaryPages((prev) =>
-      prev.map((diary) => {
-        if (diary.id === input.id) return input;
-        return diary;
-      })
+      prev.map((diary) => (diary.id === input.id ? input : diary))
     );
     setCurrentPage(input);
     setEditor((prev) => !prev);
