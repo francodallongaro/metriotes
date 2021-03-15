@@ -20,7 +20,11 @@ function MainPage({
           diaryPages={diaryPages}
         />
       ) : (
-        <PageDetail currentPage={currentPage} />
+        <PageDetail
+          currentPage={currentPage}
+          setDiaryPages={setDiaryPages}
+          setCurrentPage={setCurrentPage}
+        />
       )}
     </main>
   );
