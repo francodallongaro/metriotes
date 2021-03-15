@@ -1,6 +1,9 @@
 import React from "react";
+import { useMetasContext } from "../../context/metasContext";
 
-function Meta({ setMetasGuardadas, popular, setMetas, setCurrentMeta }) {
+function Meta({ popular, setMetas }) {
+  const { setMetasGuardadas } = useMetasContext();
+  const { setCurrentMeta } = useMetasContext();
   function handleClick() {
     const popularWithDate = {
       ...popular,

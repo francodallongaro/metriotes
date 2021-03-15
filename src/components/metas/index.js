@@ -4,33 +4,34 @@ import MisMetas from "./misMetas";
 import Populares from "./populares";
 
 function Metas() {
-  const [metasGuardadas, setMetasGuardadas] = useState([]);
-  const [currentMeta, setCurrentMeta] = useState(metasGuardadas[0]);
+  // const [metasGuardadas, setMetasGuardadas] = useState([]);
+  // const [currentMeta, setCurrentMeta] = useState(metasGuardadas[0]);
 
-  useEffect(() => {
-    let localMetas = localStorage.getItem("localMetas");
-    if (localMetas) {
-      setMetasGuardadas(JSON.parse(localMetas));
-    } else {
-      localStorage.setItem("localMetas", JSON.stringify([]));
-    }
-  }, []);
+  // useEffect(() => {
+  //   let localMetas = localStorage.getItem("localMetas");
+  //   if (localMetas) {
+  //     setMetasGuardadas(JSON.parse(localMetas));
+  //   } else {
+  //     localStorage.setItem("localMetas", JSON.stringify([]));
+  //   }
+  // }, []);
 
-  useEffect(() => {
-    localStorage.setItem("localMetas", JSON.stringify(metasGuardadas));
-  }, [metasGuardadas]);
+  // useEffect(() => {
+  //   localStorage.setItem("localMetas", JSON.stringify(metasGuardadas));
+  // }, [metasGuardadas]);
 
   return (
     <>
       <MisMetas
-        metasGuardadas={metasGuardadas}
-        setCurrentMeta={setCurrentMeta}
+      // metasGuardadas={metasGuardadas}
+      // setCurrentMeta={setCurrentMeta}
       />
       <Populares
-        setMetasGuardadas={setMetasGuardadas}
-        setCurrentMeta={setCurrentMeta}
+      // setMetasGuardadas={setMetasGuardadas}
+      // setCurrentMeta={setCurrentMeta}
       />
-      <MetaDetail currentMeta={currentMeta} setCurrentMeta={setCurrentMeta} />
+      {/* <MetaDetail currentMeta={currentMeta} setCurrentMeta={setCurrentMeta} /> */}
+      <MetaDetail />
     </>
   );
 }

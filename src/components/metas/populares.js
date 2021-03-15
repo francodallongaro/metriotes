@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useMetasContext } from "../../context/metasContext";
 import Meta from "./meta";
 
 const populares = [
@@ -14,7 +15,7 @@ const populares = [
   },
 ];
 
-function Populares({ setMetasGuardadas, setCurrentMeta }) {
+function Populares() {
   const [metas, setMetas] = useState(populares);
 
   useEffect(() => {
@@ -37,9 +38,9 @@ function Populares({ setMetasGuardadas, setCurrentMeta }) {
         <Meta
           key={i}
           popular={popular}
-          setMetasGuardadas={setMetasGuardadas}
+          // setMetasGuardadas={setMetasGuardadas}
           setMetas={setMetas}
-          setCurrentMeta={setCurrentMeta}
+          // setCurrentMeta={setCurrentMeta}
         />
       ))}
     </>

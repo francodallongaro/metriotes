@@ -1,6 +1,9 @@
 import React from "react";
+import { useMetasContext } from "../../context/metasContext";
 
-function MetaPersonal({ meta, setCurrentMeta }) {
+function MetaPersonal({ meta }) {
+  const { setCurrentMeta } = useMetasContext();
+
   const onClick = () => {
     setCurrentMeta(meta);
   };
