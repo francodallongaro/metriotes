@@ -1,29 +1,24 @@
 import React from "react";
+import { useComoEstasContext } from "../../context/como-estas-context";
 import InputPage from "../inputpage";
 import PageDetail from "../page";
 
-function MainPage({
-  currentPage,
-  add,
-  setDiaryPages,
-  setAddPage,
-  setCurrentPage,
-  diaryPages,
-}) {
+function MainPage() {
+  const { addPage } = useComoEstasContext();
   return (
     <main>
-      {add ? (
+      {addPage ? (
         <InputPage
-          setDiaryPages={setDiaryPages}
-          setAddPage={setAddPage}
-          setCurrentPage={setCurrentPage}
-          diaryPages={diaryPages}
+        // setDiaryPages={setDiaryPages}
+        // setAddPage={setAddPage}
+        // setCurrentPage={setCurrentPage}
+        // diaryPages={diaryPages}
         />
       ) : (
         <PageDetail
-          currentPage={currentPage}
-          setDiaryPages={setDiaryPages}
-          setCurrentPage={setCurrentPage}
+        // currentPage={currentPage}
+        // setDiaryPages={setDiaryPages}
+        // setCurrentPage={setCurrentPage}
         />
       )}
     </main>

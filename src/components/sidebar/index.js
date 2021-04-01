@@ -1,7 +1,10 @@
 import React from "react";
+import { useComoEstasContext } from "../../context/como-estas-context";
 import s from "./sidebar.module.css";
 
-function Sidebar({ diaryPages, setCurrentPage, setAddPage }) {
+function Sidebar() {
+  const { diaryPages, setCurrentPage, setAddPage } = useComoEstasContext();
+
   const handleClick = (page) => {
     setCurrentPage(page);
     setAddPage(false);

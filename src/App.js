@@ -1,30 +1,33 @@
 import "./App.css";
 import Navbar from "./components/navbar";
 
-import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ComoEstas from "./components/comoestas";
 import Inspiracion from "./components/inspiracion";
 import Metas from "./components/metas";
 import MetasProvider from "./context/metasContext";
+import ComoEstasProvider from "./context/como-estas-context";
 
 function App() {
   return (
-    <MetasProvider>
-      <BrowserRouter>
-        <Navbar />
-        <Switch>
-          <Route exact path="/">
+    <BrowserRouter>
+      <Navbar />
+      <Switch>
+        <Route exact path="/">
+          <MetasProvider>
             <Metas />
-          </Route>
-          <Route path="/comoestas">
+          </MetasProvider>
+        </Route>
+        <Route path="/comoestas">
+          <ComoEstasProvider>
             <ComoEstas />
-          </Route>
-          <Route path="/inspiracion">
-            <Inspiracion />
-          </Route>
-        </Switch>
-      </BrowserRouter>
-    </MetasProvider>
+          </ComoEstasProvider>
+        </Route>
+        <Route path="/inspiracion">
+          <Inspiracion />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 

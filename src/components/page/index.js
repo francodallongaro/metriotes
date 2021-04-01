@@ -1,13 +1,16 @@
 import React, { useState } from "react";
+import { useComoEstasContext } from "../../context/como-estas-context";
 import s from "./page.module.css";
 
-function Page({
-  currentPage,
-  editor,
-  setEditor,
-  setDiaryPages,
-  setCurrentPage,
-}) {
+function Page() {
+  const {
+    currentPage,
+    editor,
+    setEditor,
+    setDiaryPages,
+    setCurrentPage,
+  } = useComoEstasContext();
+
   const [input, setInput] = useState(currentPage);
 
   const onClick = () => {
@@ -55,8 +58,8 @@ function Page({
   );
 }
 
-function PageDetail({ currentPage, setDiaryPages, setCurrentPage }) {
-  const [editor, setEditor] = useState(false);
+function PageDetail() {
+  const { currentPage } = useComoEstasContext();
 
   if (!currentPage)
     return (
@@ -69,11 +72,11 @@ function PageDetail({ currentPage, setDiaryPages, setCurrentPage }) {
   return (
     <div className={s.detail}>
       <Page
-        currentPage={currentPage}
-        editor={editor}
-        setEditor={setEditor}
-        setDiaryPages={setDiaryPages}
-        setCurrentPage={setCurrentPage}
+      // currentPage={currentPage}
+      // editor={editor}
+      // setEditor={setEditor}
+      // setDiaryPages={setDiaryPages}
+      // setCurrentPage={setCurrentPage}
       />
     </div>
   );

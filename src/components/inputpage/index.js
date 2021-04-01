@@ -1,7 +1,11 @@
 import React, { useState } from "react";
+import { useComoEstasContext } from "../../context/como-estas-context";
 import s from "./inputpage.module.css";
 
-function InputPage({ setDiaryPages, setAddPage, setCurrentPage, diaryPages }) {
+function InputPage() {
+  const a = useComoEstasContext(),
+    { setDiaryPages, setAddPage, setCurrentPage } = useComoEstasContext();
+  console.log(`a`, a);
   const [input, setInput] = useState({
     title: "",
     text: "",
