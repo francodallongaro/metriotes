@@ -71,13 +71,7 @@ function PageDetail() {
 
   return (
     <div className={s.detail}>
-      <Page
-      // currentPage={currentPage}
-      // editor={editor}
-      // setEditor={setEditor}
-      // setDiaryPages={setDiaryPages}
-      // setCurrentPage={setCurrentPage}
-      />
+      <Page />
     </div>
   );
 }

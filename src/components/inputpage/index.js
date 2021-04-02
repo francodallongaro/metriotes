@@ -1,3 +1,4 @@
+import { getFirestore } from "../../firebase";
 import React, { useState } from "react";
 import { useComoEstasContext } from "../../context/como-estas-context";
 import s from "./inputpage.module.css";
@@ -25,6 +26,12 @@ function InputPage() {
       { ...input, id: Math.floor(Math.random() * 9999999) },
       ...prev,
     ]);
+
+    const db = getFirestore();
+    db.collection("diario")
+      .doc()
+      .set({ ...input, user: "userid" });
+
     setAddPage(false);
     setCurrentPage(input);
   };

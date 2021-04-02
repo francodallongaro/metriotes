@@ -7,6 +7,7 @@ import Inspiracion from "./components/inspiracion";
 import Metas from "./components/metas";
 import MetasProvider from "./context/metasContext";
 import ComoEstasProvider from "./context/como-estas-context";
+import QuotesProvider from "./context/quotes-context";
 
 function App() {
   return (
@@ -24,7 +25,9 @@ function App() {
           </ComoEstasProvider>
         </Route>
         <Route path="/inspiracion">
-          <Inspiracion />
+          <QuotesProvider>
+            <Inspiracion />
+          </QuotesProvider>
         </Route>
       </Switch>
     </BrowserRouter>
